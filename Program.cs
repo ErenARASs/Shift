@@ -352,15 +352,7 @@ namespace ConsoleApp2
             }
             // and if we earn point end of the round
             Console.WriteLine("End of the round");
-            Console.ReadLine();
-
-            // statment of the board 0
-
-            
-
-
-            // 
-
+            Console.ReadLine()
         }
     }
 }
