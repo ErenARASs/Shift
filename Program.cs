@@ -40,6 +40,7 @@ namespace ConsoleApp2
             Console.WriteLine($"3| {c1} {c2} {c3} |");
             Console.WriteLine(" + - - - +");
 
+            // We check the board has point
             int board = 0;
             if (a1 == a2 - 1 && a2 == a3 - 1 || a3 == a2 - 1 && a2 == a1 - 1)
             {
@@ -161,6 +162,7 @@ namespace ConsoleApp2
                     board = 1;
                 }
             }
+            // we write how much has board point
             Console.WriteLine(board);
 
             // we write code in while loop because we want to play when we have new series
@@ -179,7 +181,7 @@ namespace ConsoleApp2
                 int c_1 = c1;
                 int c_2 = c2;
                 int c_3 = c3;
-                // swich is a statement 
+                // swich is a condition 
                 switch (move)
                 {
                     case (1):
@@ -220,6 +222,7 @@ namespace ConsoleApp2
                 Console.WriteLine($"2| {b1} {b2} {b3} |");
                 Console.WriteLine($"3| {c1} {c2} {c3} |");
                 Console.WriteLine(" + - - - +");
+                // if we board point is 0 we can earn points so we check that
                 if (board == 0)
                 {
                     if (a1 == a2 - 1 && a2 == a3 - 1 || a3 == a2 - 1 && a2 == a1 - 1)
@@ -347,6 +350,7 @@ namespace ConsoleApp2
                 }
                 
             }
+            // and if we earn point end of the round
             Console.WriteLine("End of the round");
             Console.ReadLine();
 
