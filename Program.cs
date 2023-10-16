@@ -33,14 +33,13 @@ namespace ConsoleApp2
             int c3 = Convert.ToInt32(Console.ReadLine());
 
             // print board 
-            Console.WriteLine("  1 2 3 ");
-            Console.WriteLine(" + - - - +");
-            Console.WriteLine($"1| {a1} {a2} {a3} |");
-            Console.WriteLine($"2| {b1} {b2} {b3} |");
-            Console.WriteLine($"3| {c1} {c2} {c3} |");
-            Console.WriteLine(" + - - - +");
+            Console.WriteLine("    1 2 3 ");
+            Console.WriteLine("  + - - - +");
+            Console.WriteLine($"1 | {a1} {a2} {a3} |");
+            Console.WriteLine($"2 | {b1} {b2} {b3} |");
+            Console.WriteLine($"3 | {c1} {c2} {c3} |");
+            Console.WriteLine("  + - - - +");
 
-            // We check the board has point
             int board = 0;
             if (a1 == a2 - 1 && a2 == a3 - 1 || a3 == a2 - 1 && a2 == a1 - 1)
             {
@@ -132,46 +131,46 @@ namespace ConsoleApp2
                     board = 1;
                 }
             }
-            if (a3 == b2 - 1 && b2 == c1 - 1 || c1 == b2 - 1 && b2 == a3 - 1)
-            {
-                if (board == 1)
-                {
-                    board = 4;
-                }
-                else if (board == 4)
-                {
-                    board = 9;
-                }
-                else
-                {
-                    board = 1;
-                }
-            }
-            if (a1 == b2 - 1 && b2 == c3 - 1 || c3 == b2 - 1 && b2 == a1 - 1)
-            {
-                if (board == 1)
-                {
-                    board = 4;
-                }
-                else if (board == 4)
-                {
-                    board = 9;
-                }
-                else
-                {
-                    board = 1;
-                }
-            }
-            // we write how much has board point
-            Console.WriteLine(board);
+            int playerScore = 0;
+            int computerScore = 0;
+            Console.WriteLine($"Board Score: {board}");
+            Console.WriteLine($"Player Score: {playerScore}");
+            Console.WriteLine($"Computer Score: {computerScore}");
+
+
+            bool turn = true;
+            int moveCounter = 1;
+            string whoPlayer;
 
             // we write code in while loop because we want to play when we have new series
-            while (true) {
+            while (true)
+            {
+                if (turn)
+                {
+                    whoPlayer = "Player";
+                    Console.WriteLine($"Turn : {moveCounter} / {whoPlayer}");
+                }
+                else
+                {
+                    whoPlayer = "Computer";
+                    Console.WriteLine($"Turn : {moveCounter} / {whoPlayer}");
+                }
 
-                
                 // move the selected column 
-                Console.WriteLine("Which column do you want to move?");
-                int move = Convert.ToInt32(Console.ReadLine());
+                int move;
+                if (turn)
+                {
+                    Console.WriteLine("Which column do you want to move?");
+                    move = Convert.ToInt32(Console.ReadLine());
+                }
+                else
+                {
+                    Console.WriteLine("When you enter any button computer going to play");
+                    Console.ReadLine();
+                    Random random = new Random();
+                    move = random.Next(1, 7);
+                    Console.WriteLine($"Command: {move}");
+                }
                 int a_1 = a1;
                 int a_2 = a2;
                 int a_3 = a3;
@@ -181,7 +180,7 @@ namespace ConsoleApp2
                 int c_1 = c1;
                 int c_2 = c2;
                 int c_3 = c3;
-                // swich is a condition 
+                // swich is a statement 
                 switch (move)
                 {
                     case (1):
@@ -216,143 +215,129 @@ namespace ConsoleApp2
                         break;
                 }
                 // print moved board 
-                Console.WriteLine("  1 2 3 ");
+                Console.WriteLine("  1 2 3  ");
                 Console.WriteLine(" + - - - +");
                 Console.WriteLine($"1| {a1} {a2} {a3} |");
                 Console.WriteLine($"2| {b1} {b2} {b3} |");
                 Console.WriteLine($"3| {c1} {c2} {c3} |");
                 Console.WriteLine(" + - - - +");
-                // if we board point is 0 we can earn points so we check that
-                if (board == 0)
+
+                board = 0;
+                if (a1 == a2 - 1 && a2 == a3 - 1 || a3 == a2 - 1 && a2 == a1 - 1)
                 {
-                    if (a1 == a2 - 1 && a2 == a3 - 1 || a3 == a2 - 1 && a2 == a1 - 1)
+                    if (board == 1)
                     {
-                        if (board == 1)
-                        {
-                            board = 4;
-                        }
-                        if (board == 4)
-                        {
-                            board = 9;
-                        }
-                        else
-                        {
-                            board = 1;
-                        }
+                        board = 4;
                     }
-                    if (b1 == b2 - 1 && b2 == b3 - 1 || b3 == b2 - 1 && b2 == b1 - 1)
+                    if (board == 4)
                     {
-                        if (board == 1)
-                        {
-                            board = 4;
-                        }
-                        else if (board == 4)
-                        {
-                            board = 9;
-                        }
-                        else
-                        {
-                            board = 1;
-                        }
+                        board = 9;
                     }
-                    if (c1 == c2 - 1 && c2 == c3 - 1 || c3 == c2 - 1 && c2 == c1 - 1)
+                    else
                     {
-                        if (board == 1)
-                        {
-                            board = 4;
-                        }
-                        else if (board == 4)
-                        {
-                            board = 9;
-                        }
-                        else
-                        {
-                            board = 1;
-                        }
+                        board = 1;
                     }
-                    if (a1 == b1 - 1 && b1 == c1 - 1 || c1 == b1 - 1 && b1 == a1 - 1)
-                    {
-                        if (board == 1)
-                        {
-                            board = 4;
-                        }
-                        else if (board == 4)
-                        {
-                            board = 9;
-                        }
-                        else
-                        {
-                            board = 1;
-                        }
-                    }
-                    if (a2 == b2 - 1 && b2 == c2 - 1 || c2 == b2 - 1 && b2 == a2 - 1)
-                    {
-                        if (board == 1)
-                        {
-                            board = 4;
-                        }
-                        else if (board == 4)
-                        {
-                            board = 9;
-                        }
-                        else
-                        {
-                            board = 1;
-                        }
-                    }
-                    if (a3 == b3 - 1 && b3 == c3 - 1 || c3 == b3 - 1 && b3 == a3 - 1)
-                    {
-                        if (board == 1)
-                        {
-                            board = 4;
-                        }
-                        else if (board == 4)
-                        {
-                            board = 9;
-                        }
-                        else
-                        {
-                            board = 1;
-                        }
-                    }
-                    if (a3 == b2 - 1 && b2 == c1 - 1 || c1 == b2 - 1 && b2 == a3 -1 )
-                    {
-                        if (board == 1)
-                        {
-                            board = 4;
-                        }
-                        else if (board == 4)
-                        {
-                            board = 9;
-                        }
-                        else
-                        {
-                            board = 1;
-                        }
-                    }
-                    if (a1 == b2 - 1 && b2 == c3 - 1 || c3 == b2 - 1 && b2 == a1 - 1)
-                    {
-                        if (board == 1)
-                        {
-                            board = 4;
-                        }
-                        else if (board == 4)
-                        {
-                            board = 9;
-                        }
-                        else
-                        {
-                            board = 1;
-                        }
-                    }
-                    Console.WriteLine(board);
-                    break;
                 }
-                
+                if (b1 == b2 - 1 && b2 == b3 - 1 || b3 == b2 - 1 && b2 == b1 - 1)
+                {
+                    if (board == 1)
+                    {
+                        board = 4;
+                    }
+                    else if (board == 4)
+                    {
+                        board = 9;
+                    }
+                    else
+                    {
+                        board = 1;
+                    }
+                }
+                if (c1 == c2 - 1 && c2 == c3 - 1 || c3 == c2 - 1 && c2 == c1 - 1)
+                {
+                    if (board == 1)
+                    {
+                        board = 4;
+                    }
+                    else if (board == 4)
+                    {
+                        board = 9;
+                    }
+                    else
+                    {
+                        board = 1;
+                    }
+                }
+                if (a1 == b1 - 1 && b1 == c1 - 1 || c1 == b1 - 1 && b1 == a1 - 1)
+                {
+                    if (board == 1)
+                    {
+                        board = 4;
+                    }
+                    else if (board == 4)
+                    {
+                        board = 9;
+                    }
+                    else
+                    {
+                        board = 1;
+                    }
+                }
+                if (a2 == b2 - 1 && b2 == c2 - 1 || c2 == b2 - 1 && b2 == a2 - 1)
+                {
+                    if (board == 1)
+                    {
+                        board = 4;
+                    }
+                    else if (board == 4)
+                    {
+                        board = 9;
+                    }
+                    else
+                    {
+                        board = 1;
+                    }
+                }
+                if (a3 == b3 - 1 && b3 == c3 - 1 || c3 == b3 - 1 && b3 == a3 - 1)
+                {
+                    if (board == 1)
+                    {
+                        board = 4;
+                    }
+                    else if (board == 4)
+                    {
+                        board = 9;
+                    }
+                    else
+                    {
+                        board = 1;
+                    }
+                }
+
+                Console.WriteLine($"Board Score: {board}");
+                Console.WriteLine($"Player Score: {playerScore}");
+                Console.WriteLine($"Computer Score: {computerScore}");
+
+                if (turn)
+                {
+                    turn = false;
+                    moveCounter++;
+                }
+                else
+                {
+                    turn = true;
+                    moveCounter++;
+                }
             }
-            // and if we earn point end of the round
-            Console.WriteLine("End of the round");
-            Console.ReadLine()
+
+
+            // statment of the board 0 <This code will be not here it goes to while loop>
+
+
+
+
+            // 
+
         }
     }
 }
