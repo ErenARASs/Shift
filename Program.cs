@@ -102,7 +102,7 @@ namespace ConsoleApp2
             }
 
 
-            // statment of the board 0
+            // statment of the board 0 <This code will be not here it goes to while loop>
 
             int board = 0;
             if (a1 == a2 - 1 && a2 == a3 - 1 || a3 == a2 - 1 && a2 == a1 - 1)
