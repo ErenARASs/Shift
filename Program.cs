@@ -14,7 +14,6 @@ namespace ConsoleApp2
     {
         static void Main(string[] args)
         {
-
             int round = 1;
             bool control = true;
             int a1 = 0;
@@ -35,184 +34,255 @@ namespace ConsoleApp2
             string str_c2;
             int c3 = 0;
             string str_c3;
-
-
             while (control)
             {
-                Console.WriteLine("Lütfen X1-Y1 için 1'den 9'a kadar bir rakam giriniz:");
+                Console.WriteLine("Please enter a number from 1 to 9 for x1-y1: ");
+                
                 str_a1 = Console.ReadLine();
-                if (int.TryParse(str_a1, out a1) & ((1 <= a1 & a1 <= 9)))
+                if (int.TryParse(str_a1, out a1))
                 {
-                    break;
+                    if ((1 <= a1 & a1 <= 9))
+                    {
+                        break;
+                    }
+                    else
+                    {
+                        Console.WriteLine("Please enter a number between 1-9");
+                    }
                 }
                 else
                 {
-                    Console.WriteLine("Bir daha giriniz");
+                    Console.WriteLine("Please enter a valid number");
+
                 }
             }
 
             while (control)
             {
-                Console.WriteLine("Lütfen X1-Y2 için 1'den 9'a kadar bir rakam giriniz:");
+                Console.WriteLine("Please enter a number from 1 to 9 for x1-y2: ");
                 str_a2 = Console.ReadLine();
-                if (int.TryParse(str_a2, out a2) & ((1 <= a2 & a2 <= 9)) & !(a1 == a2))
+                if (int.TryParse(str_a2, out a2))
                 {
-                    break;      
+                    if ((1 <= a2 & a2 <= 9))
+                    {
+                        if (!(a1 == a2))
+                        {
+                            break;
+                        }
+                        else
+                        {
+                            Console.WriteLine("Please don't enter the same numbers");
+                        }
+                    }
+                    else
+                    {
+                        Console.WriteLine("Please enter a number between 1-9");
+                    }
                 }
                 else
                 {
-                    Console.WriteLine("Bir daha giriniz");
+                    Console.WriteLine("Please enter a valid number");
                 }
             }
 
             while (control)
             {
-                Console.WriteLine("Lütfen X1-Y3 için 1'den 9'a kadar bir rakam giriniz:");
+                Console.WriteLine("Please enter a number from 1 to 9 for x1-y3: ");
                 str_a3 = Console.ReadLine();
-                if (int.TryParse(str_a3, out a3) & ((1 <= a3 & a3 <= 9)) )
+                if (int.TryParse(str_a3, out a3))
                 {
-                    if (!(a3 == a2 || a3 == a1))
+                    if ((1 <= a3 & a3 <= 9))
                     {
-                        break;
-                    }else
+                        if (!(a3 == a2 || a3 == a1))
+                        {
+                            break;
+                        }
+                        else
+                        {
+                            Console.WriteLine("Please don't enter the same numbers");
+                        }
+                    }
+                    else
                     {
-                        Console.WriteLine("Bir daha giriniz");
-                    }         
+                        Console.WriteLine("Please enter a number between 1-9");
+                    }
                 }
                 else
                 {
-                    Console.WriteLine("Bir daha giriniz");
+                    Console.WriteLine("Please enter a valid number");
                 }
             }
 
             while (control)
             {
-                Console.WriteLine("Lütfen X2-Y1 için 1'den 9'a kadar bir rakam giriniz:");
+                Console.WriteLine("Please enter a number from 1 to 9 for x2-y1: ");
                 str_b1 = Console.ReadLine();
-                if (int.TryParse(str_b1, out b1) & ((1 <= b1 & b1 <= 9)))
+                if (int.TryParse(str_b1, out b1))
                 {
-                    if (!(b1 == a1 || b1 == a2 || b1 == a3))
+                    if ((1 <= b1 & b1 <= 9))
                     {
-                        break;
+                        if (!(b1 == a1 || b1 == a2 || b1 == a3))
+                        {
+                            break;
+                        }
+                        else
+                        {
+                            Console.WriteLine("Please don't enter the same numbers");
+                        }
                     }
                     else
                     {
-                        Console.WriteLine("Bir daha giriniz");
+                        Console.WriteLine("Please enter a number between 1-9");
                     }
                 }
                 else
                 {
-                    Console.WriteLine("Bir daha giriniz");
+                    Console.WriteLine("Please enter a valid number");
                 }
             }
 
             while (control)
             {
-                Console.WriteLine("Lütfen X2-Y2 için 1'den 9'a kadar bir rakam giriniz:");
+                Console.WriteLine("Please enter a number from 1 to 9 for x2-y2: ");
                 str_b2 = Console.ReadLine();
-                if (int.TryParse(str_b2, out b2) & ((1 <= b2 & b2 <= 9)))
+                if (int.TryParse(str_b2, out b2))
                 {
-                    if (!((b2 == b1 || b2 == a1 || b2 == a2 || b2 == a3)))
+                    if ((1 <= b2 & b2 <= 9))
                     {
-                        break;
+                        if (!((b2 == b1 || b2 == a1 || b2 == a2 || b2 == a3)))
+                        {
+                            break;
+                        }
+                        else
+                        {
+                            Console.WriteLine("Please don't enter the same numbers");
+                        }
                     }
                     else
                     {
-                        Console.WriteLine("Bir daha giriniz");
+                        Console.WriteLine("Please enter a number between 1-9");
                     }
                 }
                 else
                 {
-                    Console.WriteLine("Bir daha giriniz");
+                    Console.WriteLine("Please enter a valid number");
                 }
             }
 
             while (control)
             {
-                Console.WriteLine("Lütfen X2-Y3 için 1'den 9'a kadar bir rakam giriniz:");
+                Console.WriteLine("Please enter a number from 1 to 9 for x2-y3: ");
                 str_b3 = Console.ReadLine();
-                if (int.TryParse(str_b3, out b3) & ((1 <= b3 & b3 <= 9)))
+                if (int.TryParse(str_b3, out b3))
                 {
-                    if (!(b3 == b2 || b3 == b1 || b3 == a1 || b3 == a2 || b3 == a3))
+                    if ((1 <= b3 & b3 <= 9))
                     {
-                        break;
+                        if (!(b3 == b2 || b3 == b1 || b3 == a1 || b3 == a2 || b3 == a3))
+                        {
+                            break;
+                        }
+                        else
+                        {
+                            Console.WriteLine("Please don't enter the same numbers");
+                        }
                     }
                     else
                     {
-                        Console.WriteLine("Bir daha giriniz");
+                        Console.WriteLine("Please enter a number between 1-9");
                     }
                 }
                 else
                 {
-                    Console.WriteLine("Bir daha giriniz");
+                    Console.WriteLine("Please enter a valid number");
                 }
             }
 
             while (control)
             {
-                Console.WriteLine("Lütfen X3-Y1 için 1'den 9'a kadar bir rakam giriniz:");
+                Console.WriteLine("Please enter a number from 1 to 9 for x3-y1: ");
                 str_c1 = Console.ReadLine();
-                if (int.TryParse(str_c1, out c1) & ((1 <= c1 & c1 <= 9)))
+                if (int.TryParse(str_c1, out c1))
                 {
-                    if (!((c1 == a1) || (c1 == a2) || (c1 == a3) || (c1 == b1) || (c1 == b2) || (c1 == b3)))
+                    if ((1 <= c1 & c1 <= 9))
                     {
-                        break;
+                        if (!((c1 == a1) || (c1 == a2) || (c1 == a3) || (c1 == b1) || (c1 == b2) || (c1 == b3)))
+                        {
+                            break;
+                        }
+                        else
+                        {
+                            Console.WriteLine("Please don't enter the same numbers");
+                        }
                     }
                     else
                     {
-                        Console.WriteLine("Bir daha giriniz");
+                        Console.WriteLine("Please enter a number between 1-9");
                     }
                 }
                 else
                 {
-                    Console.WriteLine("Bir daha giriniz");
+                    Console.WriteLine("Please enter a valid number");
                 }
             }
 
             while (control)
             {
-                Console.WriteLine("Lütfen X3-Y2 için 1'den 9'a kadar bir rakam giriniz:");
+                Console.WriteLine("Please enter a number from 1 to 9 for x3-y2: ");
                 str_c2 = Console.ReadLine();
-                if (int.TryParse(str_c2, out c2) & ((1 <= c2 & c2 <= 9)))
+                if (int.TryParse(str_c2, out c2))
                 {
-                    if (!(c2 == a1 || c2 == a2 || c2 == a3 || c2 == b1 || c2 == b2 || c2 == b3 || c2 == c1))
+                    if ((1 <= c2 & c2 <= 9))
                     {
-                        break;
+                        if (!(c2 == a1 || c2 == a2 || c2 == a3 || c2 == b1 || c2 == b2 || c2 == b3 || c2 == c1))
+                        {
+                            break;
+                        }
+                        else
+                        {
+                            Console.WriteLine("Please don't enter the same numbers");
+                        }
                     }
                     else
                     {
-                        Console.WriteLine("Bir daha giriniz");
+                        Console.WriteLine("Please enter a number between 1-9");
                     }
                 }
                 else
                 {
-                    Console.WriteLine("Bir daha giriniz");
+                    Console.WriteLine("Please enter a valid number");
                 }
             }
 
             while (control)
             {
-                Console.WriteLine("Lütfen X3-Y3 için 1'den 9'a kadar bir rakam giriniz:");
+                Console.WriteLine("Please enter a number from 1 to 9 for x3-y3: ");
                 str_c3 = Console.ReadLine();
-                if (int.TryParse(str_c3, out c3) & ((1 <= c3 & c3 <= 9)))
+                if (int.TryParse(str_c3, out c3))
                 {
-                    if (!((c3 == a1 || c3 == a2 || c3 == a3 || (c3 == b1) || (c3 == b2) || (c3 == b3) || (c3 == c1) || (c3 == c2))))
+                    if ((1 <= c3 & c3 <= 9))
                     {
-                        break;
+                        if (!((c3 == a1 || c3 == a2 || c3 == a3 || (c3 == b1) || (c3 == b2) || (c3 == b3) || (c3 == c1) || (c3 == c2))))
+                        {
+                            break;
+                        }
+                        else
+                        {
+                            Console.WriteLine("Please don't enter the same numbers");
+                        }
                     }
                     else
                     {
-                        Console.WriteLine("Bir daha giriniz");
+                        Console.WriteLine("Please enter a number between 1-9");
                     }
                 }
                 else
                 {
-                    Console.WriteLine("Bir daha giriniz");
+                    Console.WriteLine("Please enter a valid number");
                 }
             }
-
 
             // print board 
+
             Console.WriteLine($"----------Round {round}----------");
             Console.WriteLine("    1 2 3 ");
             Console.WriteLine("  + - - - +");
@@ -220,7 +290,6 @@ namespace ConsoleApp2
             Console.WriteLine($"2 | {b1} {b2} {b3} |");
             Console.WriteLine($"3 | {c1} {c2} {c3} |");
             Console.WriteLine("  + - - - +");
-
             int comboCounter = 0;
             int score = 0;
             //first row controlling
@@ -289,7 +358,6 @@ namespace ConsoleApp2
             int moveCounter = 1;
             string whoPlays;
 
-            // tahtanın skoru sıfırlanana kadar bu döngüde kalacak
             while (boardScore != 0)
             {
                 if (turn)
@@ -302,14 +370,28 @@ namespace ConsoleApp2
                     whoPlays = "Computer";
                     Console.WriteLine($"Turn : {moveCounter} / {whoPlays}");
                 }
-
                 // move the selected column 
+                string str_move;
                 int move;
+                
                 if (turn)
                 {
-                    Console.WriteLine("Which move do you want to make?");
-                    move = Convert.ToInt32(Console.ReadLine());
-                    Console.WriteLine($"Command: {move}");
+                    while (true)
+                    {
+                        Console.WriteLine("Which move do you want to make?");
+                        str_move = Console.ReadLine();
+                        if (int.TryParse(str_move, out move))
+                        {
+                            Console.WriteLine($"Command: {move}");
+                            break;
+                        }
+                        else
+                        {
+                            Console.WriteLine("Please choose a number between 1 and 6");
+                        }
+                    }
+                    
+                    
                 }
                 else
                 {
@@ -329,39 +411,54 @@ namespace ConsoleApp2
                 int c_2 = c2;
                 int c_3 = c3;
                 // swich is a statement 
-                switch (move)
+
+
+                bool istrue = true;
+                while (istrue)
                 {
-                    case (1):
-                        a1 = a_3;
-                        a2 = a_1;
-                        a3 = a_2;
-                        break;
-                    case (2):
-                        b1 = b_3;
-                        b2 = b_1;
-                        b3 = b_2;
-                        break;
-                    case (3):
-                        c1 = c_3;
-                        c2 = c_1;
-                        c3 = c_2;
-                        break;
-                    case (4):
-                        a1 = c_1;
-                        b1 = a_1;
-                        c1 = b_1;
-                        break;
-                    case (5):
-                        a2 = c_2;
-                        b2 = a_2;
-                        c2 = b_2;
-                        break;
-                    case (6):
-                        a3 = c_3;
-                        b3 = a_3;
-                        c3 = b_3;
-                        break;
+                    istrue = false;
+                    switch (move)
+                    {
+                        case (1):
+                            a1 = a_3;
+                            a2 = a_1;
+                            a3 = a_2;
+                            break;
+                        case (2):
+                            b1 = b_3;
+                            b2 = b_1;
+                            b3 = b_2;
+                            break;
+                        case (3):
+                            c1 = c_3;
+                            c2 = c_1;
+                            c3 = c_2;
+                            break;
+                        case (4):
+                            a1 = c_1;
+                            b1 = a_1;
+                            c1 = b_1;
+                            break;
+                        case (5):
+                            a2 = c_2;
+                            b2 = a_2;
+                            c2 = b_2;
+                            break;
+                        case (6):
+                            a3 = c_3;
+                            b3 = a_3;
+                            c3 = b_3;
+                            break;
+                        default:
+                            istrue = true;
+                            
+                            Console.WriteLine("Which move do you want to make?"); /// icersine dogru yazi yazilacak 
+                            move = Convert.ToInt32(Console.ReadLine());
+                            Console.WriteLine($"Command: {move}");
+                            break;
+                    }
                 }
+
                 // print moved board 
                 Console.WriteLine($"----------Round {round}----------");
                 Console.WriteLine("   1 2 3  ");
@@ -370,7 +467,6 @@ namespace ConsoleApp2
                 Console.WriteLine($"2| {b1} {b2} {b3} |");
                 Console.WriteLine($"3| {c1} {c2} {c3} |");
                 Console.WriteLine(" + - - - +");
-
 
                 //SCORE CONTROL
                 comboCounter = 0;
@@ -445,8 +541,6 @@ namespace ConsoleApp2
                     moveCounter++;
                 }
             }
-
-
             // we write code in while loop because we want to play when we have new series
             int preround = round;
             int precomputerscore = 0;
@@ -460,18 +554,18 @@ namespace ConsoleApp2
                     preround = round;
                 }
                 if (turn)
-                {
+                {                   
                     whoPlays = "Player";
-                    Console.WriteLine($"Turn : {moveCounter} / {whoPlays}");
+                    Console.WriteLine($"Turn : {moveCounter} / {whoPlays}");             
                 }
                 else
                 {
                     whoPlays = "Computer";
                     Console.WriteLine($"Turn : {moveCounter} / {whoPlays}");
                 }
-
                 // move the selected column 
                 int move;
+                string str_move;
                 int a_1 = a1;
                 int a_2 = a2;
                 int a_3 = a3;
@@ -480,12 +574,31 @@ namespace ConsoleApp2
                 int b_3 = b3;
                 int c_1 = c1;
                 int c_2 = c2;
-                int c_3 = c3;
+                int c_3 = c3;            
                 if (turn)
                 {
-                    Console.WriteLine("Which move do you want to make?");
-                    move = Convert.ToInt32(Console.ReadLine());
-                    Console.WriteLine($"Command: {move}");
+                    while (true)
+                    {
+
+                        Console.WriteLine("Which move do you want to make?");
+                        str_move = Console.ReadLine();
+                        if (int.TryParse(str_move, out move))
+                        {
+                            if(move <= 6)
+                            {
+                                Console.WriteLine($"Command: {move}");
+                                break;
+                            }
+                            else
+                            {
+                                Console.WriteLine("Please choose a number between 1 and 6");
+                            }
+                        }
+                        else
+                        {
+                            Console.WriteLine("Please choose a number between 1 and 6");
+                        }
+                    }
                 }
                 else
                 {
@@ -493,7 +606,7 @@ namespace ConsoleApp2
                     Console.ReadLine();
                     Random random = new Random();
 
-                    // check the right move if it can computer move ************************************************
+                    // check the right move if it can ************************************************
                     int checkCounter = 1;
                     int bestOption = 0;
                     int option = 0;
@@ -651,39 +764,52 @@ namespace ConsoleApp2
                 if (boardScore != 0)
                 {
                     // swich is a statement 
-                    switch (move)
+                    bool istrue = true;
+                    while (istrue)
                     {
-                        case (1):
-                            a1 = a_3;
-                            a2 = a_1;
-                            a3 = a_2;
-                            break;
-                        case (2):
-                            b1 = b_3;
-                            b2 = b_1;
-                            b3 = b_2;
-                            break;
-                        case (3):
-                            c1 = c_3;
-                            c2 = c_1;
-                            c3 = c_2;
-                            break;
-                        case (4):
-                            a1 = c_1;
-                            b1 = a_1;
-                            c1 = b_1;
-                            break;
-                        case (5):
-                            a2 = c_2;
-                            b2 = a_2;
-                            c2 = b_2;
-                            break;
-                        case (6):
-                            a3 = c_3;
-                            b3 = a_3;
-                            c3 = b_3;
-                            break;
+                        istrue = false;
+                        switch (move)
+                        {
+                            case (1):
+                                a1 = a_3;
+                                a2 = a_1;
+                                a3 = a_2;
+                                break;
+                            case (2):
+                                b1 = b_3;
+                                b2 = b_1;
+                                b3 = b_2;
+                                break;
+                            case (3):
+                                c1 = c_3;
+                                c2 = c_1;
+                                c3 = c_2;
+                                break;
+                            case (4):
+                                a1 = c_1;
+                                b1 = a_1;
+                                c1 = b_1;
+                                break;
+                            case (5):
+                                a2 = c_2;
+                                b2 = a_2;
+                                c2 = b_2;
+                                break;
+                            case (6):
+                                a3 = c_3;
+                                b3 = a_3;
+                                c3 = b_3;
+                                break;
+                            default:
+                                istrue = true;
+
+                                Console.WriteLine("Which move do you want to make?"); /// icersine dogru yazi yazilacak 
+                                move = Convert.ToInt32(Console.ReadLine());
+                                Console.WriteLine($"Command: {move}");
+                                break;
+                        }
                     }
+
                     // print moved board 
                     Console.WriteLine($"----------Round {round}----------");
                     Console.WriteLine("   1 2 3  ");
@@ -697,42 +823,42 @@ namespace ConsoleApp2
                     //SCORE CONTROL
                     comboCounter = 0;
                     score = 0;
-                    //1. SATIR KONTROLÜ
+                    //first row controlling
                     if (((a1 == a2 - 1) && (a2 == a3 - 1)) || ((a1 == a2 + 1) && (a2 == a3 + 1)))
                     {
                         comboCounter++;
                     }
-                    //2. SATIR CONTROL
+                    //second row controlling
                     if (((b1 == b2 - 1) && (b2 == b3 - 1)) || ((b1 == b2 + 1) && (b2 == b3 + 1)))
                     {
                         comboCounter++;
                     }
-                    //3. SATIR KONTROL
+                    //third row controlling
                     if (((c1 == c2 - 1) && (c2 == c3 - 1)) || ((c1 == c2 + 1) && (c2 == c3 + 1)))
                     {
                         comboCounter++;
                     }
-                    //1. SÜTUN KONTROL
+                    //first column controlling
                     if (((a1 == b1 - 1) && (b1 == c1 - 1)) || ((a1 == b1 + 1) && (b1 == c1 + 1)))
                     {
                         comboCounter++;
                     }
-                    //2. SÜTUN KONTROL
+                    //second column controlling
                     if (((a2 == b2 - 1) && (b2 == c2 - 1)) || ((a2 == b2 + 1) && (b2 == c2 + 1)))
                     {
                         comboCounter++;
                     }
-                    //3. SÜTUN KONTROL
+                    //third column controlling
                     if (((a3 == b3 - 1) && (b3 == c3 - 1)) || ((a3 == b3 + 1) && (b3 == c3 + 1)))
                     {
                         comboCounter++;
                     }
-                    //SAĞDAN SOLA ÇAPRAZ KONTROL
+                    //right to left diagonal controlling
                     if (((a3 == b2 - 1) && (b2 == c1 - 1)) || ((a3 == b2 + 1) && (b2 == c1 + 1)))
                     {
                         comboCounter++;
                     }
-                    //SOLDAN SAĞA ÇAPRAZ KONTROL
+                    //left to right diagonal controlling
                     if (((a1 == b2 - 1) && (b2 == c3 - 1)) || ((a1 == b2 + 1) && (b2 == c3 + 1)))
                     {
                         comboCounter++;
@@ -772,38 +898,50 @@ namespace ConsoleApp2
                 else
                 {
                     // swich is a statement 
-                    switch (move)
+                    bool istrue = true;
+                    while (istrue)
                     {
-                        case (1):
-                            a1 = a_3;
-                            a2 = a_1;
-                            a3 = a_2;
-                            break;
-                        case (2):
-                            b1 = b_3;
-                            b2 = b_1;
-                            b3 = b_2;
-                            break;
-                        case (3):
-                            c1 = c_3;
-                            c2 = c_1;
-                            c3 = c_2;
-                            break;
-                        case (4):
-                            a1 = c_1;
-                            b1 = a_1;
-                            c1 = b_1;
-                            break;
-                        case (5):
-                            a2 = c_2;
-                            b2 = a_2;
-                            c2 = b_2;
-                            break;
-                        case (6):
-                            a3 = c_3;
-                            b3 = a_3;
-                            c3 = b_3;
-                            break;
+                        istrue = false;
+                        switch (move)
+                        {
+                            case (1):
+                                a1 = a_3;
+                                a2 = a_1;
+                                a3 = a_2;
+                                break;
+                            case (2):
+                                b1 = b_3;
+                                b2 = b_1;
+                                b3 = b_2;
+                                break;
+                            case (3):
+                                c1 = c_3;
+                                c2 = c_1;
+                                c3 = c_2;
+                                break;
+                            case (4):
+                                a1 = c_1;
+                                b1 = a_1;
+                                c1 = b_1;
+                                break;
+                            case (5):
+                                a2 = c_2;
+                                b2 = a_2;
+                                c2 = b_2;
+                                break;
+                            case (6):
+                                a3 = c_3;
+                                b3 = a_3;
+                                c3 = b_3;
+                                break;
+                            default:
+                                istrue = true;
+
+                                Console.WriteLine("Which move do you want to make?"); /// icersine dogru yazi yazilacak 
+                                move = Convert.ToInt32(Console.ReadLine());
+                                Console.WriteLine($"Command: {move}");
+                                break;
+                        }
                     }
                     // print moved board 
                     Console.WriteLine($"----------Round {round}----------");
@@ -818,42 +956,42 @@ namespace ConsoleApp2
                     //SCORE CONTROL
                     comboCounter = 0;
                     score = 0;
-                    //1. SATIR KONTROLÜ
+                    //first row controlling
                     if (((a1 == a2 - 1) && (a2 == a3 - 1)) || ((a1 == a2 + 1) && (a2 == a3 + 1)))
                     {
                         comboCounter++;
                     }
-                    //2. SATIR CONTROL
+                    //second row controlling
                     if (((b1 == b2 - 1) && (b2 == b3 - 1)) || ((b1 == b2 + 1) && (b2 == b3 + 1)))
                     {
                         comboCounter++;
                     }
-                    //3. SATIR KONTROL
+                    //third row controlling
                     if (((c1 == c2 - 1) && (c2 == c3 - 1)) || ((c1 == c2 + 1) && (c2 == c3 + 1)))
                     {
                         comboCounter++;
                     }
-                    //1. SÜTUN KONTROL
+                    //first column controlling
                     if (((a1 == b1 - 1) && (b1 == c1 - 1)) || ((a1 == b1 + 1) && (b1 == c1 + 1)))
                     {
                         comboCounter++;
                     }
-                    //2. SÜTUN KONTROL
+                    //second column controlling
                     if (((a2 == b2 - 1) && (b2 == c2 - 1)) || ((a2 == b2 + 1) && (b2 == c2 + 1)))
                     {
                         comboCounter++;
                     }
-                    //3. SÜTUN KONTROL
+                    //third column controlling
                     if (((a3 == b3 - 1) && (b3 == c3 - 1)) || ((a3 == b3 + 1) && (b3 == c3 + 1)))
                     {
                         comboCounter++;
                     }
-                    //SAĞDAN SOLA ÇAPRAZ KONTROL
+                    //right to left diagonal controlling
                     if (((a3 == b2 - 1) && (b2 == c1 - 1)) || ((a3 == b2 + 1) && (b2 == c1 + 1)))
                     {
                         comboCounter++;
                     }
-                    //SOLDAN SAĞA ÇAPRAZ KONTROL
+                    //left to right diagonal controlling
                     if (((a1 == b2 - 1) && (b2 == c3 - 1)) || ((a1 == b2 + 1) && (b2 == c3 + 1)))
                     {
                         comboCounter++;
@@ -971,42 +1109,42 @@ namespace ConsoleApp2
                                 //SCORE CONTROL
                                 comboCounter = 0;
                                 score = 0;
-                                //1. SATIR KONTROLÜ
+                                //first row controlling
                                 if (((a1 == a2 - 1) && (a2 == a3 - 1)) || ((a1 == a2 + 1) && (a2 == a3 + 1)))
                                 {
                                     comboCounter++;
                                 }
-                                //2. SATIR CONTROL
+                                //second row controlling
                                 if (((b1 == b2 - 1) && (b2 == b3 - 1)) || ((b1 == b2 + 1) && (b2 == b3 + 1)))
                                 {
                                     comboCounter++;
                                 }
-                                //3. SATIR KONTROL
+                                //third row controlling
                                 if (((c1 == c2 - 1) && (c2 == c3 - 1)) || ((c1 == c2 + 1) && (c2 == c3 + 1)))
                                 {
                                     comboCounter++;
                                 }
-                                //1. SÜTUN KONTROL
+                                //first column controlling
                                 if (((a1 == b1 - 1) && (b1 == c1 - 1)) || ((a1 == b1 + 1) && (b1 == c1 + 1)))
                                 {
                                     comboCounter++;
                                 }
-                                //2. SÜTUN KONTROL
+                                //second column controlling
                                 if (((a2 == b2 - 1) && (b2 == c2 - 1)) || ((a2 == b2 + 1) && (b2 == c2 + 1)))
                                 {
                                     comboCounter++;
                                 }
-                                //3. SÜTUN KONTROL
+                                //third column controlling
                                 if (((a3 == b3 - 1) && (b3 == c3 - 1)) || ((a3 == b3 + 1) && (b3 == c3 + 1)))
                                 {
                                     comboCounter++;
                                 }
-                                //SAĞDAN SOLA ÇAPRAZ KONTROL
+                                //right to left diagonal controlling
                                 if (((a3 == b2 - 1) && (b2 == c1 - 1)) || ((a3 == b2 + 1) && (b2 == c1 + 1)))
                                 {
                                     comboCounter++;
                                 }
-                                //SOLDAN SAĞA ÇAPRAZ KONTROL
+                                //left to right diagonal controlling
                                 if (((a1 == b2 - 1) && (b2 == c3 - 1)) || ((a1 == b2 + 1) && (b2 == c3 + 1)))
                                 {
                                     comboCounter++;
@@ -1178,7 +1316,6 @@ namespace ConsoleApp2
                             }
                             boardScore = score;
                         }
-
                         Console.WriteLine($"----------Round {round}----------");
                         Console.WriteLine("   1 2 3  ");
                         Console.WriteLine(" + - - - +");
@@ -1192,9 +1329,7 @@ namespace ConsoleApp2
                     }
                 }
             }
-
-            Console.ReadKey();
-
+            Console.ReadLine();
         }
     }
 }
